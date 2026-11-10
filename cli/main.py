@@ -1,4 +1,5 @@
 import sys
+import os
 from enum import StrEnum
 from typing import Annotated
 
@@ -195,4 +196,7 @@ def logout(plan: Annotated[Plan, typer.Argument(help="The plan to sign out of")]
 
 
 if __name__ == "__main__":
+    PROXY = 'http://127.0.0.1:7897'
+    os.environ['HTTP_PROXY'] = PROXY
+    os.environ['HTTPS_PROXY'] = PROXY
     app()
