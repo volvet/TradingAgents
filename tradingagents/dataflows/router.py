@@ -38,6 +38,7 @@ from tradingagents.dataflows.vendors.yahoo.market import (
     get_YFin_data_online,
 )
 from tradingagents.dataflows.vendors.yahoo.news import get_global_news_yfinance, get_news_yfinance
+from tradingagents.dataflows.vendors.longbridge.news import get_news_longbridge
 
 logger = logging.getLogger(__name__)
 
@@ -129,6 +130,7 @@ VENDOR_METHODS = {
     "get_news": {
         "alpha_vantage": get_alpha_vantage_news,
         "yfinance": get_news_yfinance,
+        "longbridge": get_news_longbridge,
     },
     "get_global_news": {
         "yfinance": get_global_news_yfinance,
